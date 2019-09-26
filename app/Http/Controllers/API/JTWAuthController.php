@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterAuthRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use JWTAuth;
 
-class AuthController extends Controller
+class JWTAuthController extends Controller
 {
     public $loginAfterSignUp = true;
 

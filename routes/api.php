@@ -23,10 +23,18 @@ Route::group([
     'prefix' => 'auth'
 
 ], static function () {
-    Route::post('login', 'AuthController@login');
-    Route::post('register', 'AuthController@register');
+    Route::post('login', 'API\JWTAuthController@login');
+    Route::post('register', 'API\JWTAuthController@register');
     Route::group(['middleware' => 'jwt.auth'], static function () {
-        Route::get('logout', 'AuthController@logout');
-        Route::get('user', 'AuthController@getAuthUser');
+        Route::get('logout', 'API\JWTAuthController@logout');
+        Route::get('user', 'API\JWTAuthController@getAuthUser');
+        ////Route::resource('thread', 'ThreadController');
+        //Route::resource('comments', 'CommentsController',['except' => [
+        //    'store'
+        //]]);
+        //Route::post('comments/{thread}', 'CommentsController@store');
+        //Route::post('comments/reply/{comment}', 'CommentsController@reply');
+        //Route::post('comments/approveComment/{comment}', 'CommentsController@approveComment');
+        //Route::post('comments/upvote/{comment}', 'CommentsController@upvote');
     });
 });
