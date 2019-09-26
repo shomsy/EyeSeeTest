@@ -20,10 +20,10 @@ class Thread extends Model
      *
      * @return object \Illuminate\Database\Eloquent\Relations\hasMany
      */
-    //public function comments()
-    //{
-    //    return $this->hasMany(Comment::class);
-    //}
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
     /**
      * @return bool
      * Thread	cannot	be	edited	6h	after	creation

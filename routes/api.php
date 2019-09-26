@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 Route::group([
 
     'middleware' => 'api',
-    'prefix' => 'auth'
+    'prefix' => 'auth',
 
 ], static function () {
     Route::post('login', 'API\JWTAuthController@login');
@@ -28,13 +28,24 @@ Route::group([
     Route::group(['middleware' => 'jwt.auth'], static function () {
         Route::get('logout', 'API\JWTAuthController@logout');
         Route::get('user', 'API\JWTAuthController@getAuthUser');
-        ////Route::resource('thread', 'ThreadController');
-        //Route::resource('comments', 'CommentsController',['except' => [
-        //    'store'
-        //]]);
-        //Route::post('comments/{thread}', 'CommentsController@store');
-        //Route::post('comments/reply/{comment}', 'CommentsController@reply');
-        //Route::post('comments/approveComment/{comment}', 'CommentsController@approveComment');
-        //Route::post('comments/upvote/{comment}', 'CommentsController@upvote');
+    });
+});
+
+Route::group([
+
+    'middleware' => 'api',
+
+], static function () {
+    Route::group(['middleware' => 'jwt.auth'], static function () {
+        Route::resource('thread', 'API\ThreadController');
+        Route::resource('comments', 'API\CommentController', [
+            'except' => [
+                'store',
+            ],
+        ]);
+        Route::post('comments/{thread}', 'CommentController@store');
+        Route::post('comments/reply/{comment}', 'CommentController@reply');
+        Route::post('comments/approveComment/{comment}', 'CommentController@approveComment');
+        Route::post('comments/upvote/{comment}', 'CommentController@upvote');
     });
 });
