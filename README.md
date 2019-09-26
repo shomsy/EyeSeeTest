@@ -1,4 +1,8 @@
-# Stisla Laravel
+#Reddit-Like Laravel API
+API based on JWT token:
+https://jwt-auth.readthedocs.io/en/develop/
+
+# Stisla Laravel Dashboard
 Stisla is the most-awesome admin panel I've seen so far. As I love this template very much, I have implemented Stisla in a fresh Laravel 5.8 app. Simply clone this repo and start building your next Laravel project on top of the awesome Stisla. This project makes a very little and basic use of VueJS and compiled JS is already bundled with the project. If you want to make it more dynamic, you can update the Vue components or add your own.
 
 ## Installation
@@ -58,6 +62,3 @@ This project comes with a user CRUD and makes the use of [Spatie Roles and Permi
 *   [Stisla Bootstrap 4 Admin Panel Template](https://github.com/stisla/stisla)
 *   [Spatie Laravel Roles and Permissions](https://github.com/spatie/laravel-permission)
 *   [vue-ios-alertview](https://github.com/Wyntau/vue-ios-alertview)
-
-### Contribution:
-Contribution is welcomed and highly appreciated. Fork the repo, make your updates and initiate a pull request. I'll approve all pull requests as long as they are constructive and follow the Laravel standard practices.
