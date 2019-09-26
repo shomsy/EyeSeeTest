@@ -1,4 +1,4 @@
-#Reddit-Like Laravel API
+# Reddit-Like Laravel API
 API based on JWT token:
 https://jwt-auth.readthedocs.io/en/develop/
 
